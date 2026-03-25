@@ -3,11 +3,10 @@ import { router } from './routes/indexRouter.js'; // Still works!
 import path from 'node:path';
 const app = express();
 
-app.set("view engine", "ejs");
-app.set("views", path.join(import.meta.dirname, "views"));
+app.set('views', path.join(process.cwd(), 'src', 'views'));
+app.set('view engine', 'ejs');
 
-const PORT = 3000;
-
+const PORT = process.env.PORT || 3000;
 // Middleware to parse JSON
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
