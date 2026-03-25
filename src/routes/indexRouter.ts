@@ -13,17 +13,29 @@ const messages = [
         text: "Hello World!",
         user: "Charles",
         added: new Date()
-    }
-];
-
+    }];
 router.get('/', (req: Request, res: Response) => {
     res.render("index", { title: "Mini Messageboard", messages: messages });
 
 })
 
-router.get('new', (req: Request, res: Response) => {
-    // define here the new page
+router.get('/new', (req: Request, res: Response) => {
+    res.render("form");
 })
 
+router.post('/new', (req: Request, res: Response) => {
+    const message = {
+        user: req.body.messageUser,
+        text: req.body.messageText,
+        added: new Date()
+    }
+    messages.push(message)
+    res.redirect('/');
+})
+
+router.get('/message/:id', (req: Request, res: Response) => {
+    console.log("here")
+    res.render("messageDetails", { message: messages[Number(req.params.id)] });
+})
 
 export { router } 

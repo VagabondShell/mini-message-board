@@ -1,0 +1,161 @@
+/* public/styles.css */
+
+/* Reset default margins and set a nice background */
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Center the main content column */
+.board-container {
+    max-width: 600px;
+    width: 100%;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.board-header h1 {
+    color: #111827;
+    margin: 0;
+}
+
+.new-msg-btn {
+    background-color: #10b981;
+    /* A nice success green */
+    color: white;
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+/* Remove default list styling */
+.message-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Space between each card */
+}
+
+/* The Card Look */
+.message-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.author {
+    margin: 0;
+    color: #111827;
+    font-size: 1.25rem;
+}
+
+.date {
+    color: #6b7280;
+}
+
+.text {
+    color: #374151;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+}
+
+.open-btn {
+    display: inline-block;
+    background-color: #3b82f6;
+    color: white;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+
+/* Form Specific Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #374151;
+}
+
+.form-input {
+    width: 100%;
+    /* box-sizing ensures padding doesn't push the input outside the container */
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    resize: vertical;
+    /* Lets users drag the textarea up and down */
+}
+
+/* The modern "glow" effect when a user clicks the input */
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #10b981;
+    color: white;
+    padding: 0.875rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 0.5rem;
+}
+
+.submit-btn:hover {
+    background-color: #059669;
+}
+
+.cancel-container {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.cancel-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.cancel-link:hover {
+    color: #374151;
+    text-decoration: underline;
+}

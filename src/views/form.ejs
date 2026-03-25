@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Message</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <main class="board-container">
+        
+        <div class="message-card">
+            <h1 style="margin-top: 0; margin-bottom: 1.5rem; color: #111827;">Post a New Message</h1>
+
+            <form method="POST" action="/new">
+                
+                <div class="form-group">
+                    <label for="user" class="form-label">Your Name</label>
+                    <input type="text" id="user" name="messageUser" class="form-input" placeholder="e.g., Vagabond" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="text" class="form-label">Message</label>
+                    <textarea id="text" name="messageText" class="form-input" rows="4" placeholder="What's on your mind?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Post Message</button>
+            </form>
+
+            <div class="cancel-container">
+                <a href="/" class="cancel-link">Cancel and go back</a>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
