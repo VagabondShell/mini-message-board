@@ -34,8 +34,13 @@ router.post('/new', (req: Request, res: Response) => {
 })
 
 router.get('/message/:id', (req: Request, res: Response) => {
-    console.log("here")
-    res.render("messageDetails", { message: messages[Number(req.params.id)] });
+    const NumId = Number(req.params.id);
+    if (isNaN(NumId) || NumId < 0 || NumId >= messages.length) {
+        return res.status(404).render("404", {
+            errorMsg: "Oops! We couldn't find that message."
+        });
+    }
+    res.render("messageDetails", { message: messages[NumId] });
 })
 
 export { router } 
