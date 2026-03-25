@@ -28,3 +28,17 @@ Make sure you have Node.js and npm installed on your system.
    ```bash
    git clone [https://github.com/vagabond/mini-message-board.git](https://github.com/vagabond/mini-message-board.git)
    cd mini-message-board
+   ```
+2. Install the local dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+    npm run dev
+    ```
+4. Open your browser and navigate to:
+   ```bash
+   http://localhost:3000
+   ```
+
