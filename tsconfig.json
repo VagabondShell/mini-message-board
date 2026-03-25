@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",           // Modern Node features
+    "module": "NodeNext",
+    "moduleResolution": "nodeNext",   // Standard Node importing
+    "rootDir": "./src",           // Where your TS files live
+    "outDir": "./dist",           // Where the compiled JS will go
+    "strict": true,               // The most important setting: catches all bugs
+    "esModuleInterop": true,      // Fixes import issues with older packages
+    "skipLibCheck": true,         // Speeds up compile time
+    "forceConsistentCasingInFileNames": true
+  }
+}
