@@ -16,7 +16,7 @@
         </header>
 
         <ul class="message-list">
-            <% messages.forEach((message, index)=> { %>
+            <% messages.forEach((message)=> { %>
                 <li class="message-card">
                     <div class="message-header">
                         <h3 class="author">
@@ -33,7 +33,7 @@
                         <%= message.id %>
                     </p>
 
-                    <a href="/message/<%= index %>" class="open-btn">Open Details</a>
+                    <a href="/message/<%= message.id %>" class="open-btn">Open Details</a>
                 </li>
                 <% }); %>
         </ul>

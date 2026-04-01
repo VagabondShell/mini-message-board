@@ -11,7 +11,7 @@ router.get('/new', (req: Request, res: Response) => {
     res.render("form");
 })
 
-router.post('/new', usersController.addUser)
+router.post('/new', usersController.validateUser, usersController.addUser)
 
 router.get('/message/:id', usersController.searchUser)
 
