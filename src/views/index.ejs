@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Message Board</title>
     <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
     <main class="board-container">
         <header class="board-header">
@@ -14,19 +16,25 @@
         </header>
 
         <ul class="message-list">
-            <% messages.forEach((message, index) => { %>
+            <% messages.forEach((message, index)=> { %>
                 <li class="message-card">
                     <div class="message-header">
-                        <h3 class="author"><%= message.user %></h3>
-                        <small class="date"><%= message.added.toLocaleString() %></small>
+                        <h3 class="author">
+                            <%= message.username %>
+                        </h3>
+                        <small class="date">
+                            <%= message.added_at ? message.added_at.toLocaleString() : 'No date' %>
+                        </small>
                     </div>
-                    
-                    <p class="text"><%= message.text %></p>
-                    
+                    <p class="text">
+                        <%= message.text %>
+                    </p>
+
                     <a href="/message/<%= index %>" class="open-btn">Open Details</a>
                 </li>
-            <% }); %>
+                <% }); %>
         </ul>
     </main>
 </body>
+
 </html>
