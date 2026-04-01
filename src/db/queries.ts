@@ -17,7 +17,7 @@ export async function insertUsername(username: string, text: string) {
 export async function searchUsername(id: number) {
 
     const { rows } = await pool.query(
-        "SELECT username FROM usernames WHERE id = $1",
+        "SELECT * FROM users WHERE id = $1",
         [id]
     );
     return rows[0];
