@@ -1,4 +1,6 @@
 import express, { Request, Response } from 'express';
+import * as usersController from '../controllers/userController.js';
+
 
 
 const router = express.Router();
@@ -12,18 +14,17 @@ const messages = [
     {
         text: "Hello World!",
         user: "Charles",
-        added: new Date()
+        configadded: new Date()
     }];
-router.get('/', (req: Request, res: Response) => {
-    res.render("index", { title: "Mini Messageboard", messages: messages });
 
-})
+router.get('/', usersController.getUsernames)
 
 router.get('/new', (req: Request, res: Response) => {
     res.render("form");
 })
 
 router.post('/new', (req: Request, res: Response) => {
+    //here we need to add users
     const message = {
         user: req.body.messageUser,
         text: req.body.messageText,
@@ -34,6 +35,7 @@ router.post('/new', (req: Request, res: Response) => {
 })
 
 router.get('/message/:id', (req: Request, res: Response) => {
+    //search for the user by id
     const NumId = Number(req.params.id);
     if (isNaN(NumId) || NumId < 0 || NumId >= messages.length) {
         return res.status(404).render("404", {
